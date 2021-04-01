@@ -9,15 +9,18 @@ class Monitor extends React.Component {
           id="monitor"
         >
           <div
-            className="bg-dark w-100 d-flex rounded text-light flex-row"
+            className="bg-dark w-100 d-flex rounded text-light justify-content-end flex-row"
             id="history"
           >
-            <div id="equal"></div>
-            <div id="valueTwo"></div>
-            <div id="sign"></div>
-            <div id="valueOne"></div>
+            <div className="history-items" id="valueOne"></div>
+            <div className="history-items" id="sign"></div>
+            <div className="history-items" id="valueTwo"></div>
+            <div className="history-items" id="equal"></div>
           </div>
-          <div className="bg-light rounded w-100 d-flex" id="live-monitor">
+          <div
+            className="bg-light rounded w-100 d-flex justify-content-end"
+            id="live-monitor"
+          >
             0
           </div>
         </div>

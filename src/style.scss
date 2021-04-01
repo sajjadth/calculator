@@ -9,10 +9,13 @@
   #monitor {
     width: 215px;
     height: 100px;
-    direction: rtl;
+
     #history {
       height: 35px;
       padding: 5px 10px 5px 5px;
+      .history-items{
+        margin: 1px;
+      }
     }
     #live-monitor {
       height: 65px;
