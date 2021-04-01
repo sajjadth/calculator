@@ -20,9 +20,18 @@
     #live-monitor {
       height: 65px;
       padding: 5px;
+      font-size: 25px;
     }
   }
   #numpad {
     width: 250px;
+  }
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #clear{
+    font-size: 20px !important;
   }
 }

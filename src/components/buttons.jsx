@@ -98,7 +98,7 @@ class Buttons extends React.Component {
           className="d-flex row justify-content-center align-items-center"
           id="numpad"
         >
-          <div className="btn btn-success" onClick={() => this.handleBack()}>
+          <div className="btn btn-success center" onClick={() => this.handleBack()}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -113,113 +113,113 @@ class Buttons extends React.Component {
               />
             </svg>
           </div>
-          <div className="btn btn-success" onClick={() => this.handleClear()}>
+          <div className="btn btn-success center" id="clear" onClick={() => this.handleClear()}>
             c
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleSignClick(e)}
           >
             ÷
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleSignClick(e)}
           >
             ×
           </div>
           <div className="w-100"></div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             7
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             8
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             9
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleSignClick(e)}
           >
             -
           </div>
           <div className="w-100"></div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             4
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             5
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             6
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleSignClick(e)}
           >
             +
           </div>
           <div className="w-100"></div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             1
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             2
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             3
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             id="equal"
             onClick={() => this.handleEqualClick()}
           >
             =
           </div>
           <div className="w-100"></div>
-          <div className="btn btn-success"></div>
+          <div className="btn btn-success center"></div>
           <div
             value="0"
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             0
           </div>
           <div
-            className="btn btn-success"
+            className="btn btn-success center"
             onClick={(e) => this.handleNumberClick(e)}
           >
             .
           </div>
-          <div className="btn btn-success"></div>
+          <div className="btn btn-success center"></div>
         </div>
       </React.Fragment>
     );
