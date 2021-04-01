@@ -1,9 +1,25 @@
 * {
   text-transform: capitalize;
-  .btn{
-    width: 40px !important;
-    height: 40px !important;
+  .btn {
+    width: 50px !important;
+    height: 50px !important;
     margin: 2.5px;
+    font-size: 25px;
   }
-
+  #monitor {
+    width: 215px;
+    height: 100px;
+    direction: rtl;
+    #history {
+      height: 35px;
+      padding: 5px 10px 5px 5px;
+    }
+    #live-monitor {
+      height: 65px;
+      padding: 5px;
+    }
+  }
+  #numpad {
+    width: 250px;
+  }
 }
