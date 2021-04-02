@@ -12,9 +12,13 @@ class Monitor extends React.Component {
             className="bg-dark w-100 d-flex text-light justify-content-end flex-row"
             id="history"
           >
+            <div className="history-items" id="parenthesesValOneStart"></div>
             <div className="history-items" id="valueOne"></div>
+            <div className="history-items" id="parenthesesValOneEnd"></div>
             <div className="history-items" id="sign"></div>
+            <div className="history-items" id="parenthesesValTwoStart"></div>
             <div className="history-items" id="valueTwo"></div>
+            <div className="history-items" id="parenthesesValTwoEnd"></div>
             <div className="history-items" id="equal"></div>
           </div>
           <div

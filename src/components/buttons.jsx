@@ -32,14 +32,35 @@ class Buttons extends React.Component {
     const signHistory = $("#sign");
     const valueOneHistory = $("#valueOne");
     const valueTwoHistory = $("#valueTwo");
-    const valueTwoHistoryVal = $("#valueTwo").text();
+    const parenthesesValOneStart = $("#parenthesesValOneStart");
+    const parenthesesValOneEnd = $("#parenthesesValOneEnd");
     const equal = $("#equal");
-
-    valueOneHistory.text(liveMonitorVal);
-    signHistory.text(signs);
-    liveMonitor.text(0);
-    valueTwoHistory.text("");
-    equal.text("");
+    if (liveMonitorVal < 0) {
+      parenthesesValOneStart.text("(");
+      valueOneHistory.text(liveMonitorVal);
+      parenthesesValOneEnd.text(")");
+      signHistory.text(signs);
+      liveMonitor.text(0);
+      valueTwoHistory.text("");
+      equal.text("");
+    } else {
+      signHistory.text(signs);
+      liveMonitor.text(0);
+      valueTwoHistory.text("");
+      equal.text("");
+      valueOneHistory.text(liveMonitorVal);
+    }
+  }
+  checkinhValueTwo() {
+    const liveMonitorVal = Number($("#live-monitor").text());
+    const parenthesesValTwoStart = $("#parenthesesValTwoStart");
+    const parenthesesValTwoEnd = $("#parenthesesValTwoEnd");
+    if (liveMonitorVal < 0) {
+      parenthesesValTwoStart.text("(");
+      parenthesesValTwoEnd.text(")");
+    } else {
+      null;
+    }
   }
   handleEqualClick() {
     const signHistoryVal = $("#sign").text();
@@ -48,21 +69,27 @@ class Buttons extends React.Component {
     const liveMonitorVal = Number($("#live-monitor").text());
     const valueTwoHistory = $("#valueTwo");
     const liveMonitor = $("#live-monitor");
+    const parenthesesValTwoStart = $("#parenthesesValTwoStart");
+    const parenthesesValTwoEnd = $("#parenthesesValTwoEnd");
     const equal = $("#equal");
 
     if (signHistoryVal === "+") {
+      this.checkinhValueTwo();
       valueTwoHistory.text(liveMonitorVal);
       equal.text("=");
       liveMonitor.text(valueOneHistoryVal + liveMonitorVal);
     } else if (signHistoryVal === "-") {
+      this.checkinhValueTwo();
       valueTwoHistory.text(liveMonitorVal);
       equal.text("=");
       liveMonitor.text(valueOneHistoryVal - liveMonitorVal);
     } else if (signHistoryVal === "×") {
+      this.checkinhValueTwo();
       valueTwoHistory.text(liveMonitorVal);
       equal.text("=");
       liveMonitor.text(valueOneHistoryVal * liveMonitorVal);
     } else if (signHistoryVal === "÷") {
+      this.checkinhValueTwo();
       valueTwoHistory.text(liveMonitorVal);
       equal.text("=");
       liveMonitor.text(valueOneHistoryVal / liveMonitorVal);
@@ -84,22 +111,30 @@ class Buttons extends React.Component {
     const valueOneHistory = $("#valueOne");
     const valueTwoHistory = $("#valueTwo");
     const equal = $("#equal");
+    const parenthesesValOneStart = $("#parenthesesValOneStart");
+    const parenthesesValOneEnd = $("#parenthesesValOneEnd");
+    const parenthesesValTwoStart = $("#parenthesesValTwoStart");
+    const parenthesesValTwoEnd = $("#parenthesesValTwoEnd");
 
     liveMonitor.text(0);
     valueOneHistory.text("");
     valueTwoHistory.text("");
     signHistory.text("");
     equal.text("");
+    parenthesesValOneStart.text("");
+    parenthesesValOneEnd.text("");
+    parenthesesValTwoStart.text("");
+    parenthesesValTwoEnd.text("");
   }
-  handleNegativeAndPositive(){
+  handleNegativeAndPositive() {
     const liveMonitorVal = $("#live-monitor").text();
     const liveMonitor = $("#live-monitor");
     const backspaceNumber = liveMonitorVal.replace("-", "");
 
-    if(liveMonitorVal >0){
-      liveMonitor.prepend("-")
-    }else if(liveMonitorVal < 0){
-     liveMonitor.text(backspaceNumber)
+    if (liveMonitorVal > 0) {
+      liveMonitor.prepend("-");
+    } else if (liveMonitorVal < 0) {
+      liveMonitor.text(backspaceNumber);
     }
   }
   render() {
@@ -131,7 +166,12 @@ class Buttons extends React.Component {
               />
             </svg>
           </div>
-          <div className="btn center sign" onClick={() => this.handleNegativeAndPositive()}><sup>+</sup>/<sub>-</sub></div>
+          <div
+            className="btn center sign"
+            onClick={() => this.handleNegativeAndPositive()}
+          >
+            <sup>+</sup>/<sub>-</sub>
+          </div>
           <div
             className="btn center sign"
             onClick={(e) => this.handleSignClick(e)}
