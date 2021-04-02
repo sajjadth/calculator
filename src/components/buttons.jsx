@@ -64,20 +64,17 @@ class Buttons extends React.Component {
   }
   handleEqualClick() {
     const signHistoryVal = $("#sign").text();
-    const signHistory = $("#sign");
     const valueOneHistoryVal = Number($("#valueOne").text());
     const liveMonitorVal = Number($("#live-monitor").text());
     const valueTwoHistory = $("#valueTwo");
     const liveMonitor = $("#live-monitor");
-    const parenthesesValTwoStart = $("#parenthesesValTwoStart");
-    const parenthesesValTwoEnd = $("#parenthesesValTwoEnd");
     const equal = $("#equal");
 
     if (signHistoryVal === "+") {
       this.checkinhValueTwo();
       valueTwoHistory.text(liveMonitorVal);
       equal.text("=");
-      liveMonitor.text(valueOneHistoryVal + liveMonitorVal);
+      liveMonitor.text((valueOneHistoryVal + liveMonitorVal).toFixed(2));
     } else if (signHistoryVal === "-") {
       this.checkinhValueTwo();
       valueTwoHistory.text(liveMonitorVal);
@@ -167,7 +164,7 @@ class Buttons extends React.Component {
             </svg>
           </div>
           <div
-            className="btn center sign"
+            className="btn center delete"
             onClick={() => this.handleNegativeAndPositive()}
           >
             <sup>+</sup>/<sub>-</sub>
