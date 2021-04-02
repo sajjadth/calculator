@@ -71,11 +71,11 @@ class Buttons extends React.Component {
   handleBack() {
     const liveMonitorVal = $("#live-monitor").text();
     const liveMonitor = $("#live-monitor");
-    const backedNumber = liveMonitorVal.slice(0, -1);
+    const backspaceNumber = liveMonitorVal.slice(0, -1);
     if (liveMonitorVal.length === 1) {
       liveMonitor.text(0);
     } else {
-      liveMonitor.text(backedNumber);
+      liveMonitor.text(backspaceNumber);
     }
   }
   handleClear() {
@@ -90,6 +90,17 @@ class Buttons extends React.Component {
     valueTwoHistory.text("");
     signHistory.text("");
     equal.text("");
+  }
+  handleNegativeAndPositive(){
+    const liveMonitorVal = $("#live-monitor").text();
+    const liveMonitor = $("#live-monitor");
+    const backspaceNumber = liveMonitorVal.replace("-", "");
+
+    if(liveMonitorVal >0){
+      liveMonitor.prepend("-")
+    }else if(liveMonitorVal < 0){
+     liveMonitor.text(backspaceNumber)
+    }
   }
   render() {
     return (
@@ -120,8 +131,11 @@ class Buttons extends React.Component {
               />
             </svg>
           </div>
-          <div className="btn center"></div>
-          <div className="btn center sign" onClick={(e) => this.handleSignClick(e)}>
+          <div className="btn center sign" onClick={() => this.handleNegativeAndPositive()}><sup>+</sup>/<sub>-</sub></div>
+          <div
+            className="btn center sign"
+            onClick={(e) => this.handleSignClick(e)}
+          >
             ÷
           </div>
           <div className="w-100"></div>
@@ -143,7 +157,10 @@ class Buttons extends React.Component {
           >
             9
           </div>
-          <div className="btn center sign" onClick={(e) => this.handleSignClick(e)}>
+          <div
+            className="btn center sign"
+            onClick={(e) => this.handleSignClick(e)}
+          >
             ×
           </div>
           <div className="w-100"></div>
@@ -165,7 +182,10 @@ class Buttons extends React.Component {
           >
             6
           </div>
-          <div className="btn center sign" onClick={(e) => this.handleSignClick(e)}>
+          <div
+            className="btn center sign"
+            onClick={(e) => this.handleSignClick(e)}
+          >
             -
           </div>
           <div className="w-100"></div>
@@ -188,7 +208,10 @@ class Buttons extends React.Component {
             3
           </div>
 
-          <div className="btn center sign" onClick={(e) => this.handleSignClick(e)}>
+          <div
+            className="btn center sign"
+            onClick={(e) => this.handleSignClick(e)}
+          >
             +
           </div>
           <div className="w-100"></div>
