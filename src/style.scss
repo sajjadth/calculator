@@ -1,22 +1,48 @@
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+
 * {
   text-transform: capitalize;
+  font-family: 'Dosis', sans-serif;
   .btn {
     width: 50px !important;
     height: 50px !important;
     margin: 2.5px;
     font-size: 20px;
     border-radius: 150px;
-    color: white;
+    color: white !important;
   }
-  .number{
+  .number {
     background: #333333;
   }
-  .sign{
-    background: #FF9501;
+  .number:hover{
+    background: #444444;
+    color: white;
   }
-  .delete{
-   background: #A6A6A6;
-   color: black !important;
+  .number:active {
+    background: #555555;
+    color: white;
+  }
+  .sign {
+    background: #ff9501;
+    font-size: 30px;
+  }
+  .sign:hover{
+    background: #ee8f00;
+  }
+  .sign:active{
+    background: #dd9501;
+  }
+  .delete {
+    background: #a6a6a6;
+    color: black !important;
+  }
+  .delete:hover{
+    background: #b6b6b6;
+  }
+  .delete:active{
+    background: #c6c6c6;
+
   }
   #monitor {
     width: 215px;
@@ -53,8 +79,7 @@
   #content {
     width: 240px;
     height: 400px;
-    background-color: black
-
+    background-color: black;
   }
   #clear {
     font-size: 20px !important;
