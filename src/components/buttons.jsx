@@ -69,27 +69,52 @@ class Buttons extends React.Component {
     const valueTwoHistory = $("#valueTwo");
     const liveMonitor = $("#live-monitor");
     const equal = $("#equal");
+    const finalAnswer = valueOneHistoryVal + liveMonitorVal;
 
-    if (signHistoryVal === "+") {
-      this.checkinhValueTwo();
-      valueTwoHistory.text(liveMonitorVal);
-      equal.text("=");
-      liveMonitor.text((valueOneHistoryVal + liveMonitorVal).toFixed(2));
-    } else if (signHistoryVal === "-") {
-      this.checkinhValueTwo();
-      valueTwoHistory.text(liveMonitorVal);
-      equal.text("=");
-      liveMonitor.text(valueOneHistoryVal - liveMonitorVal);
-    } else if (signHistoryVal === "×") {
-      this.checkinhValueTwo();
-      valueTwoHistory.text(liveMonitorVal);
-      equal.text("=");
-      liveMonitor.text(valueOneHistoryVal * liveMonitorVal);
-    } else if (signHistoryVal === "÷") {
-      this.checkinhValueTwo();
-      valueTwoHistory.text(liveMonitorVal);
-      equal.text("=");
-      liveMonitor.text(valueOneHistoryVal / liveMonitorVal);
+    if (finalAnswer % 1 === 0) {
+      if (signHistoryVal === "+") {
+        this.checkinhValueTwo();
+        valueTwoHistory.text(liveMonitorVal);
+        equal.text("=");
+        liveMonitor.text(finalAnswer);
+      } else if (signHistoryVal === "-") {
+        this.checkinhValueTwo();
+        valueTwoHistory.text(liveMonitorVal);
+        equal.text("=");
+        liveMonitor.text(finalAnswer);
+      } else if (signHistoryVal === "×") {
+        this.checkinhValueTwo();
+        valueTwoHistory.text(liveMonitorVal);
+        equal.text("=");
+        liveMonitor.text(finalAnswer);
+      } else if (signHistoryVal === "÷") {
+        this.checkinhValueTwo();
+        valueTwoHistory.text(liveMonitorVal);
+        equal.text("=");
+        liveMonitor.text(finalAnswer);
+      }
+    } else {
+      if (signHistoryVal === "+") {
+        this.checkinhValueTwo();
+        valueTwoHistory.text(liveMonitorVal);
+        equal.text("=");
+        liveMonitor.text(finalAnswer.toFixed(2));
+      } else if (signHistoryVal === "-") {
+        this.checkinhValueTwo();
+        valueTwoHistory.text(liveMonitorVal);
+        equal.text("=");
+        liveMonitor.text(finalAnswer.toFixed(2));
+      } else if (signHistoryVal === "×") {
+        this.checkinhValueTwo();
+        valueTwoHistory.text(liveMonitorVal);
+        equal.text("=");
+        liveMonitor.text(finalAnswer.toFixed(2));
+      } else if (signHistoryVal === "÷") {
+        this.checkinhValueTwo();
+        valueTwoHistory.text(liveMonitorVal);
+        equal.text("=");
+        liveMonitor.text(finalAnswer.toFixed(2));
+      }
     }
   }
   handleBack() {
