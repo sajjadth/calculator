@@ -5,11 +5,11 @@ class Monitor extends React.Component {
     return (
       <React.Fragment>
         <div
-          className="d-flex flex-column justify-content-center align-items-center"
+          className="d-flex flex-column justify-content-center align-items-center m-1"
           id="monitor"
         >
           <div
-            className="bg-dark w-100 d-flex rounded text-light justify-content-end flex-row"
+            className="bg-dark w-100 d-flex text-light justify-content-end flex-row"
             id="history"
           >
             <div className="history-items" id="valueOne"></div>
@@ -18,7 +18,7 @@ class Monitor extends React.Component {
             <div className="history-items" id="equal"></div>
           </div>
           <div
-            className="bg-light rounded w-100 d-flex justify-content-end"
+            className="bg-info w-100 d-flex justify-content-end"
             id="live-monitor"
           >
             0
