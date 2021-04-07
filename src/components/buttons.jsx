@@ -69,7 +69,16 @@ class Buttons extends React.Component {
     const valueTwoHistory = $("#valueTwo");
     const liveMonitor = $("#live-monitor");
     const equal = $("#equal");
-    const finalAnswer = valueOneHistoryVal + liveMonitorVal;
+    const finalAnswer =
+      signHistoryVal === "+"
+        ? valueOneHistoryVal + liveMonitorVal
+        : signHistoryVal === "-"
+        ? valueOneHistoryVal - liveMonitorVal
+        : signHistoryVal === "×"
+        ? valueOneHistoryVal * liveMonitorVal
+        : signHistoryVal === "÷"
+        ? valueOneHistoryVal / liveMonitorVal
+        : null;
 
     if (finalAnswer % 1 === 0) {
       if (signHistoryVal === "+") {
